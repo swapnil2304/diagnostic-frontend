@@ -98,7 +98,7 @@ export default function DiagnosticPrototype() {
           </Card>
         </TabsContent>
         <TabsContent value="patientStudies">
-          <PatientStudyManager />
+          <PatientStudyManager/>
         </TabsContent>
       </Tabs>
     </div>

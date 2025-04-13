@@ -78,6 +78,7 @@ export default function DiagnosticPrototype() {
           <TabsTrigger value="admin">Admin</TabsTrigger>
           <TabsTrigger value="peer">Peer Review</TabsTrigger>
           <TabsTrigger value="notify">Notifications</TabsTrigger>
+          <TabsTrigger value="patientStudies">Patient Studies</TabsTrigger>
         </TabsList>
         <TabsContent value="notify">
           <Card className="bg-gray-900 mt-4">
@@ -94,6 +95,9 @@ export default function DiagnosticPrototype() {
               )}
             </CardContent>
           </Card>
+        </TabsContent>
+        <TabsContent value="patientStudies">
+          <PatientStudyManager />
         </TabsContent>
       </Tabs>
     </div>

@@ -1,6 +1,5 @@
 {
   "name": "diagnostic-frontend",
-  "private": true,
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
@@ -8,6 +7,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.292.0",
+    "framer-motion": "^10.16.1",
     "cornerstone-core": "^2.3.0"
   },
   "devDependencies": {

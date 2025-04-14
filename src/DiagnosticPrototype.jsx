@@ -1,12 +1,11 @@
-import { Card, CardContent } from "/src/components/ui/card";
-import { Button } from "/src/components/ui/button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "/src/components/ui/tabs";
-import { Input } from "/src/components/ui/input";
-import { Textarea } from "/src/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { AlertCircle, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import PatientStudyManager from "/src/PatientStudyManager";
 
 export default function DiagnosticPrototype() {
   const [notifications, setNotifications] = useState([]);
@@ -79,7 +78,6 @@ export default function DiagnosticPrototype() {
           <TabsTrigger value="admin">Admin</TabsTrigger>
           <TabsTrigger value="peer">Peer Review</TabsTrigger>
           <TabsTrigger value="notify">Notifications</TabsTrigger>
-          <TabsTrigger value="patientStudies">Patient Studies</TabsTrigger>
         </TabsList>
         <TabsContent value="notify">
           <Card className="bg-gray-900 mt-4">
@@ -96,9 +94,6 @@ export default function DiagnosticPrototype() {
               )}
             </CardContent>
           </Card>
-        </TabsContent>
-        <TabsContent value="patientStudies">
-          <PatientStudyManager/>
         </TabsContent>
       </Tabs>
     </div>

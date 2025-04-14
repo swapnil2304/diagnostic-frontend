@@ -7,7 +7,6 @@ import { AlertCircle, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import PatientStudyManager from "@/PatientStudyManager";
-// Import the new component at the top:
 import EnhancedDicomViewer from "@/EnhancedDicomViewer";
 
 // Inside your component render:

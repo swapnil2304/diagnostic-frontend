@@ -11,7 +11,8 @@
     "react-dom": "^18.2.0",
     "lucide-react": "^0.292.0",
     "framer-motion": "^10.16.1",
-    "cornerstone-core": "^2.3.0"
+    "cornerstone-core": "^2.3.0",
+    "cornerstone-tools": "^6.0.10"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.3",
@@ -19,5 +20,9 @@
     "postcss": "^8.4.21",
     "tailwindcss": "^3.3.2",
     "vite": "^6.2.6"
+  },
+  "overrides": {
+    "@babel/runtime": "^7.27.0"
   }
 }
+

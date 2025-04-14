@@ -20,4 +20,7 @@
     "tailwindcss": "^3.3.2",
     "vite": "^5.0.0"
   }
+  "dependencies": {
+  "cornerstone-core": "^2.3.0"
+  }
 }

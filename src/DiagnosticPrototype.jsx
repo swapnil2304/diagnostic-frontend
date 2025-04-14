@@ -7,6 +7,31 @@ import { AlertCircle, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import PatientStudyManager from "@/PatientStudyManager";
+// Import the new component at the top:
+import EnhancedDicomViewer from "@/EnhancedDicomViewer";
+
+// Inside your component render:
+<TabsContent value="diagnostic">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="grid grid-cols-1 lg:grid-cols-2 gap-4"
+  >
+    <Card className="bg-gray-900">
+      <CardContent className="p-4">
+        <h2 className="text-xl font-semibold mb-2">DICOM Viewer</h2>
+        {/* Use the enhanced DICOM viewer here, passing a sample image ID */}
+        <EnhancedDicomViewer imageId="wadouri:http://localhost:8042/wado?objectUID=1.2.3.4.5" />
+        <div className="text-sm text-gray-400 mt-2">
+          Zoom | Pan | Measure | Window/Level Adjustments
+        </div>
+      </CardContent>
+    </Card>
+    {/* Other UI components as needed */}
+  </motion.div>
+</TabsContent>
+
 
 export default function DiagnosticPrototype() {
   const [notifications, setNotifications] = useState([]);
@@ -82,7 +107,7 @@ export default function DiagnosticPrototype() {
           <TabsTrigger value="patientStudies">Patient Studies</TabsTrigger>
           <TabsTrigger value="notify">Notifications</TabsTrigger>
         </TabsList>
-        {/* Diagnostic Tab */}
+        {/* Diagnostic Tab */}      
         <TabsContent value="diagnostic">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -90,15 +115,16 @@ export default function DiagnosticPrototype() {
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-4"
           >
-            <Card className="bg-gray-900">
-              <CardContent className="p-4">
-                <h2 className="text-xl font-semibold mb-2">DICOM Viewer</h2>
-                <div className="h-64 bg-gray-800 rounded-lg mb-2 flex items-center justify-center text-gray-400">
-                  [DICOM Images Here]
-                </div>
-                <div className="text-sm text-gray-400">Zoom | Pan | Measure | Fusion</div>
-              </CardContent>
-            </Card>
+             <Card className="bg-gray-900">
+                <CardContent className="p-4">
+                  <h2 className="text-xl font-semibold mb-2">DICOM Viewer</h2>
+                {/* Use the enhanced DICOM viewer here, passing a sample image ID */}
+                  <EnhancedDicomViewer imageId="wadouri:http://localhost:8042/wado?objectUID=1.2.3.4.5" />
+                    <div className="text-sm text-gray-400 mt-2">
+                      Zoom | Pan | Measure | Window/Level Adjustments
+                    </div>
+                </CardContent>
+             </Card>
             <Card className="bg-gray-900">
               <CardContent className="p-4">
                 <h2 className="text-xl font-semibold mb-2">AI Findings</h2>

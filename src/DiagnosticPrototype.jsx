@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { AlertCircle, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import PatientStudyManager from "./PatientStudyManager";
 
 export default function DiagnosticPrototype() {
   const [notifications, setNotifications] = useState([]);
@@ -74,11 +75,65 @@ export default function DiagnosticPrototype() {
           <TabsTrigger value="pending">Pending</TabsTrigger>
           <TabsTrigger value="signed">Signed Off</TabsTrigger>
           <TabsTrigger value="urgent">Urgent</TabsTrigger>
-          <TabsTrigger value="triage">Triage</TabsTrigger>
-          <TabsTrigger value="admin">Admin</TabsTrigger>
-          <TabsTrigger value="peer">Peer Review</TabsTrigger>
+          <TabsTrigger value="patientStudies">Patient Studies</TabsTrigger>
           <TabsTrigger value="notify">Notifications</TabsTrigger>
         </TabsList>
+        
+        {/* "All" Tab: Main Diagnostic UI */}
+        <TabsContent value="all">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4"
+          >
+            <Card className="bg-gray-900">
+              <CardContent className="p-4">
+                <h2 className="text-xl font-semibold mb-2">DICOM Viewer</h2>
+                <div className="h-64 bg-gray-800 rounded-lg mb-2 flex items-center justify-center text-gray-400">
+                  [DICOM Images Here]
+                </div>
+                <div className="text-sm text-gray-400">Zoom | Pan | Measure | Fusion</div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-900">
+              <CardContent className="p-4">
+                <h2 className="text-xl font-semibold mb-2">AI Findings</h2>
+                <div className="text-sm text-gray-300 mb-2">
+                  <p>Lesion Detected: <strong>Yes</strong></p>
+                  <p>Risk: <span className="text-red-400">High</span></p>
+                  <p>SUVmax: 12.5</p>
+                  <p>Volume: 3.2 cm³</p>
+                </div>
+                <div className="flex items-center text-yellow-300">
+                  <AlertCircle className="w-4 h-4 mr-2" /> AI Suggests Immediate Review
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-900 lg:col-span-2">
+              <CardContent className="p-4">
+                <h2 className="text-xl font-semibold mb-2">Structured Reporting</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  <Input placeholder="Patient Name: John Doe" />
+                  <Input placeholder="Study: PET/CT" />
+                  <Input placeholder="Date: 2025-04-07" />
+                </div>
+                <Textarea className="mb-2" rows={6} placeholder="Findings: ..." />
+                <Textarea className="mb-4" rows={3} placeholder="Impression: ..." />
+                <Button>Finalize Report</Button>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </TabsContent>
+
+        {/* "Patient Studies" Tab: Patient Study Manager */}
+        <TabsContent value="patientStudies">
+          <PatientStudyManager />
+        </TabsContent>
+
+        {/* "Notifications" Tab */}
         <TabsContent value="notify">
           <Card className="bg-gray-900 mt-4">
             <CardContent className="p-4 space-y-3">

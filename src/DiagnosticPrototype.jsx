@@ -71,6 +71,13 @@ export default function DiagnosticPrototype() {
 
       <Tabs defaultValue="diagnostic" className="mb-4">
         <TabsList>
+          <TabsTrigger value="all">All</TabsTrigger>
+          <TabsTrigger value="pending">Pending</TabsTrigger>
+          <TabsTrigger value="signed">Signed Off</TabsTrigger>
+          <TabsTrigger value="urgent">Urgent</TabsTrigger>
+          <TabsTrigger value="triage">Triage</TabsTrigger>
+          <TabsTrigger value="admin">Admin</TabsTrigger>
+          <TabsTrigger value="peer">Peer Review</TabsTrigger>
           <TabsTrigger value="diagnostic">Diagnostic</TabsTrigger>
           <TabsTrigger value="patientStudies">Patient Studies</TabsTrigger>
           <TabsTrigger value="notify">Notifications</TabsTrigger>

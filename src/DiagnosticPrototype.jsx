@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { AlertCircle, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import PatientStudyManager from "@/PatientStudyManager";
+import PatientStudyManager from "./PatientStudyManager";
 
 export default function DiagnosticPrototype() {
   const [notifications, setNotifications] = useState([]);
@@ -69,18 +69,14 @@ export default function DiagnosticPrototype() {
         </div>
       )}
 
-      <Tabs defaultValue="all" className="mb-4">
+      <Tabs defaultValue="diagnostic" className="mb-4">
         <TabsList>
-          <TabsTrigger value="all">All</TabsTrigger>
-          <TabsTrigger value="pending">Pending</TabsTrigger>
-          <TabsTrigger value="signed">Signed Off</TabsTrigger>
-          <TabsTrigger value="urgent">Urgent</TabsTrigger>
+          <TabsTrigger value="diagnostic">Diagnostic</TabsTrigger>
           <TabsTrigger value="patientStudies">Patient Studies</TabsTrigger>
           <TabsTrigger value="notify">Notifications</TabsTrigger>
         </TabsList>
-        
-        {/* "All" Tab: Main Diagnostic UI */}
-        <TabsContent value="all">
+        {/* Diagnostic Tab */}
+        <TabsContent value="diagnostic">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -96,7 +92,6 @@ export default function DiagnosticPrototype() {
                 <div className="text-sm text-gray-400">Zoom | Pan | Measure | Fusion</div>
               </CardContent>
             </Card>
-
             <Card className="bg-gray-900">
               <CardContent className="p-4">
                 <h2 className="text-xl font-semibold mb-2">AI Findings</h2>
@@ -111,7 +106,6 @@ export default function DiagnosticPrototype() {
                 </div>
               </CardContent>
             </Card>
-
             <Card className="bg-gray-900 lg:col-span-2">
               <CardContent className="p-4">
                 <h2 className="text-xl font-semibold mb-2">Structured Reporting</h2>
@@ -127,13 +121,11 @@ export default function DiagnosticPrototype() {
             </Card>
           </motion.div>
         </TabsContent>
-
-        {/* "Patient Studies" Tab: Patient Study Manager */}
+        {/* Patient Studies Tab */}
         <TabsContent value="patientStudies">
           <PatientStudyManager />
         </TabsContent>
-
-        {/* "Notifications" Tab */}
+        {/* Notifications Tab */}
         <TabsContent value="notify">
           <Card className="bg-gray-900 mt-4">
             <CardContent className="p-4 space-y-3">

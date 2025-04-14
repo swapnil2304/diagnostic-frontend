@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { AlertCircle, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import PatientStudyManager from "./PatientStudyManager";
+import PatientStudyManager from "/src/PatientStudyManager";
 
 export default function DiagnosticPrototype() {
   const [notifications, setNotifications] = useState([]);

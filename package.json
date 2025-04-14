@@ -1,5 +1,6 @@
 {
   "name": "diagnostic-frontend",
+  "private": true,
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
@@ -11,7 +12,9 @@
     "react-dom": "^18.2.0",
     "lucide-react": "^0.292.0",
     "framer-motion": "^10.16.1",
-    "cornerstone-core": "^2.3.0"
+    "@babel/runtime": "^7.27.0",
+    "cornerstone-core": "^2.6.1",
+    "cornerstone-tools": "^6.0.10"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.3",
@@ -21,3 +24,4 @@
     "vite": "^6.2.6"
   }
 }
+

@@ -1,9 +1,9 @@
-app = "diagnostic-notify-backend"
+app = "diagnostic-frontend"
 
 primary_region = "ams"
 
 [build]
-  image = "python:3.10"
+  image = "python:3.10-slim"
 
 [env]
   PORT = "8000"
@@ -16,9 +16,11 @@ primary_region = "ams"
   protocol = "tcp"
 
   [[services.ports]]
+    handlers = ["http"]
     port = 80
 
   [[services.ports]]
+    handlers = ["tls", "http"]
     port = 443
 
   [[services.tcp_checks]]
@@ -26,3 +28,4 @@ primary_region = "ams"
     timeout = "2s"
     grace_period = "5s"
     restart_limit = 0
+

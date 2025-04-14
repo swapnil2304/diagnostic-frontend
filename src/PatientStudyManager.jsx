@@ -9,7 +9,7 @@ export default function PatientStudyManager() {
   return (
     <div className="p-4 bg-black text-white min-h-screen">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">Patient & Study Management</h1>
+        <h1 className="text-2xl font-bold">Patient &amp; Study Management</h1>
         <Button variant="secondary" className="flex items-center gap-2">
           <Plus className="w-4 h-4" /> Add New Study
         </Button>
@@ -45,9 +45,7 @@ export default function PatientStudyManager() {
                   <TableCell>PET/CT</TableCell>
                   <TableCell>2025-04-07</TableCell>
                   <TableCell>
-                    <Button size="sm" variant="outline">
-                      Open
-                    </Button>
+                    <Button size="sm" variant="outline">Open</Button>
                   </TableCell>
                 </TableRow>
               </TableBody>

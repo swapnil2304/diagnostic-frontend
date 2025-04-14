@@ -45,7 +45,9 @@ export default function PatientStudyManager() {
                   <TableCell>PET/CT</TableCell>
                   <TableCell>2025-04-07</TableCell>
                   <TableCell>
-                    <Button size="sm" variant="outline">Open</Button>
+                    <Button size="sm" variant="outline">
+                      Open
+                    </Button>
                   </TableCell>
                 </TableRow>
               </TableBody>

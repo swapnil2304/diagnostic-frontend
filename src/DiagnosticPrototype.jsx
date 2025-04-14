@@ -8,30 +8,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import PatientStudyManager from "@/PatientStudyManager";
 
-
-// Inside your component render:
-<TabsContent value="diagnostic">
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    className="grid grid-cols-1 lg:grid-cols-2 gap-4"
-  >
-    <Card className="bg-gray-900">
-      <CardContent className="p-4">
-        <h2 className="text-xl font-semibold mb-2">DICOM Viewer</h2>
-        {/* Use the enhanced DICOM viewer here, passing a sample image ID */}
-        <EnhancedDicomViewer imageId="wadouri:http://localhost:8042/wado?objectUID=1.2.3.4.5" />
-        <div className="text-sm text-gray-400 mt-2">
-          Zoom | Pan | Measure | Window/Level Adjustments
-        </div>
-      </CardContent>
-    </Card>
-    {/* Other UI components as needed */}
-  </motion.div>
-</TabsContent>
-
-
 export default function DiagnosticPrototype() {
   const [notifications, setNotifications] = useState([]);
   const [wsError, setWsError] = useState(null);
@@ -106,7 +82,7 @@ export default function DiagnosticPrototype() {
           <TabsTrigger value="patientStudies">Patient Studies</TabsTrigger>
           <TabsTrigger value="notify">Notifications</TabsTrigger>
         </TabsList>
-        {/* Diagnostic Tab */}      
+        {/* Diagnostic Tab */}
         <TabsContent value="diagnostic">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -123,7 +99,7 @@ export default function DiagnosticPrototype() {
                 <div className="text-sm text-gray-400">Zoom | Pan | Measure | Fusion</div>
               </CardContent>
             </Card>
-             <Card className="bg-gray-900">
+            <Card className="bg-gray-900">
               <CardContent className="p-4">
                 <h2 className="text-xl font-semibold mb-2">AI Findings</h2>
                 <div className="text-sm text-gray-300 mb-2">
